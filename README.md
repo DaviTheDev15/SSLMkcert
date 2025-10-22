@@ -8,12 +8,18 @@ sudo apt upgrade
 ```
 sudo apt install libnss3-tools
 sudo apt install mkcert
+
+# Teste o comando abaixo para ver se a instalação foi bem sucedida.
+
 mkcert --version
 ```
 
 ### Passo 3 - Gerar e Mover o Certificado
 ```
 hostname -i
+
+# Substitua yourIP pelo IP obtido através do comando anterior.
+
 mkcert gcsi.local localhost yourIP ::1
 mkcert -install
 cd /etc/nginx/
@@ -27,6 +33,7 @@ mv /home/user/gcsi.local+3-key.pem /etc/nginx/ssl/
 cd /etc/nginx/sites-available/
 nano default
 
+# Substitua o conteudo atual de default por:
 
 server {
 	listen 443 ssl;
@@ -48,7 +55,10 @@ server {
 ##### Passo 5 - Configurar o arquivo de Hosts
 ```
 nano /etc/hosts
-127.0.0.1 gcsi.local
+
+# Adicione a linha abaixo no seu arquivo
+
+yourIP gcsi.local
 ```
 
 ###### Passo 6 - Encerrar e Iniciar o Nginx
