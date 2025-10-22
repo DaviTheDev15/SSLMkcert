@@ -56,7 +56,8 @@ server {
 ```
 nano /etc/hosts
 
-# Adicione a linha abaixo no seu arquivo
+# Adicione a linha abaixo no seu arquivo.
+# Novamente substituia yourIP pelo IP da maquina.
 
 yourIP gcsi.local
 ```
