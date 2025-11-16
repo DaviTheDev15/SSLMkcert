@@ -4,7 +4,7 @@ sudo apt update
 sudo apt upgrade
 ```
 
-## Passo 2 - Instalar Dependências
+# Passo 2 - Instalar Dependências
 ```
 sudo apt install libnss3-tools
 sudo apt install mkcert
@@ -14,7 +14,7 @@ sudo apt install mkcert
 mkcert --version
 ```
 
-### Passo 3 - Gerar e Mover o Certificado
+# Passo 3 - Gerar e Mover o Certificado
 ```
 hostname -i
 
@@ -28,7 +28,7 @@ mv /home/user/gcsi.local+3.pem /etc/nginx/ssl/
 mv /home/user/gcsi.local+3-key.pem /etc/nginx/ssl/
 ```
 
-#### Passo 4 - Configurar Nginx
+# Passo 4 - Configurar Nginx
 ```
 cd /etc/nginx/sites-available/
 nano default
@@ -52,7 +52,7 @@ server {
 }
 ```
 
-##### Passo 5 - Configurar o arquivo de Hosts
+# Passo 5 - Configurar o arquivo de Hosts
 ```
 nano /etc/hosts
 
@@ -62,7 +62,7 @@ nano /etc/hosts
 yourIP gcsi.local
 ```
 
-###### Passo 6 - Encerrar e Iniciar o Nginx
+# Passo 6 - Encerrar e Iniciar o Nginx
 ```
 systemctl stop nginx
 systemctl start nginx
